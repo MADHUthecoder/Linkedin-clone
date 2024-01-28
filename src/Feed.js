@@ -7,8 +7,8 @@ import ImageIcon from '@mui/icons-material/Image'
 import EventNoteIcon from '@mui/icons-material/EventNote'
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
 import Post from './Post'
-import { db } from 'firebase'
-import firebase from "firebase"
+import { db } from './firebase'
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 function Feed() {
   const [input, setInput]= useState('');
@@ -26,12 +26,12 @@ function Feed() {
   const sendPost = (e) =>{
     e.preventDefault();
 
-    db.collection('posts').add({
+    addDoc(collection(db, "user"),{
       name: 'Madhu Varsha',
       description: 'this is a test',
       message: input,
       photoUrl:'',
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      timestamp: serverTimestamp()
     })
   }
 
