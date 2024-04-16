@@ -17,7 +17,7 @@ function Header() {
             <img src={image} alt="img"/>
             <div className='header_search'>
                 <SearchIcon />
-                <input type='text' />
+                <input type='text' placeholder='Search'/>
             </div>
         </div>
 

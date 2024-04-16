@@ -2,38 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./Feed.css"
 import CreateIcon from "@mui/icons-material/Create"
 import InputOption from './InputOption'
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions'
 import ImageIcon from '@mui/icons-material/Image'
 import EventNoteIcon from '@mui/icons-material/EventNote'
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
 import Post from './Post'
-import { db } from './firebase'
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+
 
 function Feed() {
-  const [input, setInput]= useState('');
-  const [posts, setPosts] =useState([]);
-
-  useEffect(() => { db.collection("posts").onSnapshot(snapshot =>(
-    setPosts(snapshot.docs.map(doc =>(
-      {
-        id:doc.id,
-        data: doc.data(),
-      }
-    )))
-  )) },[]);
-
-  const sendPost = (e) =>{
-    e.preventDefault();
-
-    addDoc(collection(db, "user"),{
-      name: 'Madhu Varsha',
-      description: 'this is a test',
-      message: input,
-      photoUrl:'',
-      timestamp: serverTimestamp()
-    })
-  }
 
   return (
     <div className='feed'>
@@ -41,21 +16,25 @@ function Feed() {
             <div className='feed_input'>
                 <CreateIcon />
                 <form>
-                    <input value={input} onChange={e => setInput(e.target.value)} type='text' />
-                    <button onClick={sendPost} type='submit'>Send</button>
+                    {/* <input value={input} onChange={e => setInput(e.target.value)} type='text' />
+                    <button onClick={sendPost} type='submit'>Send</button> */}
+                    <input type='text' />
+                    <button>Send</button>
                 </form>
             </div>
             <div className='feed_inputOptions'>
-              <InputOption title='Photo' Icon={ImageIcon} color="#70B5F9" />
-              <InputOption title='Video' Icon={SubscriptionsIcon} color="#E7A33E" />
-              <InputOption title='Event' Icon={EventNoteIcon} color="#C0CBCD" />
+              <InputOption title='Media' className='inputOption-title' Icon={ImageIcon} color="#70B5F9" />
+              <InputOption title='Event' Icon={EventNoteIcon} color="#c37d16" />
               <InputOption title='Write article' Icon={CalendarViewDayIcon} color="#7FC15E" />
             </div>
         </div>
-        {posts.map((post)=>(
+        {/* {posts.map((post)=>(
           <Post />
-        ))}
-        <Post name='Madhu Varsha' description='This is a test' message='Wow! This works awesome'/>
+        ))} */}
+        <Post name='Madhu Varsha' description='Full-Stack Dev' message='Wow! This works awesome'/>
+        <Post name='Madhu Varsha' description='Full-Stack Dev' message='He is our post'/>
+        <Post name='Madhu Varsha' description='Full-Stack Dev' message='Yet more to goo!!'/>
+        <Post name='Madhu Varsha' description='Full-Stack Dev' message='Its working perfectly!'/>
     </div>
   )
 }
