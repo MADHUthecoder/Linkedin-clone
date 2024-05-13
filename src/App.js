@@ -7,20 +7,19 @@ import Login from './Login';
 import Widgets from './Widgets';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   return (
-    <div className="App">
+    <div className="app">
       <Header />
 
       {user ? (<Login />) : (
-      <div className="App_body">
+      <div className="app_body">
         <Sidebar />
         <Feed />
         <Widgets />
       </div>
       )}
 
-      {/* Widgets */}
     </div>
   );
 }

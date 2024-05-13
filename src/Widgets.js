@@ -25,12 +25,13 @@ function Widgets() {
         <InfoRounded />
       </div>
       {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
-      {newsArticle("Madhu's Upcoming project", "Amazon site clone is getting ready")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      {newsArticle("Madhu's Linkedin clone is ready", "Design and Functionalities added")}
+      
     </div>
   );
 }

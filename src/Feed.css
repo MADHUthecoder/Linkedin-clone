@@ -1,6 +1,7 @@
 .feed{
     flex: 0.6;
     margin: 0 20px;
+    
 }
 
 .feed_inputContainer{
@@ -9,7 +10,7 @@
     padding-bottom: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
-    width: 500px;
+    width: 700px;
 }
 
 .feed_input{
